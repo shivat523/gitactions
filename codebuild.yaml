@@ -1,0 +1,13 @@
+steps:
+- name: 'hashicorp/terraform:light'
+  args: ['init']
+  
+- name: 'hashicorp/terraform:light'
+  args: ['apply', '-auto-approve']
+  env:
+  - 'GOOGLE_PROJECT_ID=webx-424701'
+  - 'GOOGLE_REGION=us-central1'
+  - 'GOOGLE_CREDENTIALS=projects/278236878062/secrets/GOOGLE_CREDENTIALS'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
